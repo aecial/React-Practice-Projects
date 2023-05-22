@@ -51,7 +51,9 @@ function App() {
             .filter((item) => {
               return newSearch.toLowerCase() === ""
                 ? item
-                : item.first_name[0].toLowerCase().includes(newSearch);
+                : item.first_name.toLowerCase().includes(newSearch) ||
+                    item.last_name.toLowerCase().includes(newSearch) ||
+                    item.contact.toLowerCase().includes(newSearch);
             })
             .map((item) => (
               <tr>
